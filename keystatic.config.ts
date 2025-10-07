@@ -23,7 +23,9 @@ import { BrandMarkComponent } from "./.keystatic/mark";
 
 export default config({
 	storage: {
-		kind: "local",
+		// kind:"local"
+		kind: "github",
+		repo:"pancham555/site"
 	},
 	ui: {
 		brand: {

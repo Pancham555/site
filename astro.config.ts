@@ -1,5 +1,6 @@
 import alpinejs from "@astrojs/alpinejs";
-import cloudflare from "@astrojs/cloudflare";
+// import cloudflare from "@astrojs/cloudflare";
+import vercel from "@astrojs/vercel"
 import markdoc from "@astrojs/markdoc";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -15,12 +16,13 @@ import { defaultLocale, locales, siteTitle, siteUrl } from "./site.config";
 export default defineConfig({
 	site: siteUrl,
 	output: "hybrid",
-	adapter: cloudflare({
-		imageService: "compile",
-		experimental: {
-			manualChunks: ["sharp"],
-		},
-	}),
+	adapter:vercel(),
+	// adapter: cloudflare({
+	// 	imageService: "compile",
+	// 	experimental: {
+	// 		manualChunks: ["sharp"],
+	// 	},
+	// }),
 	compressHTML: true,
 	i18n: {
 		defaultLocale: defaultLocale,
